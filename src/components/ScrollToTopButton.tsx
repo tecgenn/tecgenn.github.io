@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import type React from 'react';
+import { useEffect, useState } from 'react';
 
 const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled up to a certain amount
   const toggleVisibility = () => {
     if (window.scrollY > 300) {
       setIsVisible(true);
@@ -12,7 +12,6 @@ const ScrollToTopButton: React.FC = () => {
     }
   };
 
-  // Set up a listener for scroll events
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
     return () => {
@@ -20,7 +19,6 @@ const ScrollToTopButton: React.FC = () => {
     };
   }, []);
 
-  // Function to scroll to top smoothly
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -32,6 +30,7 @@ const ScrollToTopButton: React.FC = () => {
     <div className="fixed bottom-5 right-5 z-50">
       {isVisible && (
         <button
+          type="button"
           onClick={scrollToTop}
           className="p-3 bg-gray-900/60 backdrop-blur-sm border-2 border-cyan-500 text-cyan-400 rounded-full shadow-lg hover:bg-cyan-500 hover:text-white transition-all duration-300 ease-in-out focus:outline-none"
           aria-label="Voltar ao topo"
