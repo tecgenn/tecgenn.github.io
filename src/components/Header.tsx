@@ -6,12 +6,8 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center text-3xl font-bold">
-              <img
-                src="/assets/logo.png"
-                alt="TecGenn Logo"
-                className="h-24 w-24 mr-2"
-              />
+            <a href="#hero" className="flex items-center text-3xl font-bold">
+              <img src="/assets/logo.webp" alt="TecGenn Logo" className="h-10 w-10 mr-2" />
               <span className="gradient-text">TecGenn</span>
             </a>
           </div>

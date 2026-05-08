@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative py-24 md:py-32 bg-grid-cyan-500/[0.05]">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A1A]"></div>
+    <section id="hero" className="relative py-24 md:py-32">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
           Desbloqueie Novas Fontes de Renda com <span className="gradient-text">Inteligência Artificial</span>

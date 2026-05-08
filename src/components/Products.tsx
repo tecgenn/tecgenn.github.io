@@ -1,41 +1,21 @@
 import React from "react";
 
 const CheckIcon = () => (
-  <svg
-    className="w-6 h-6 text-cyan-400 mr-3 flex-shrink-0"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M5 13l4 4L19 7"
-    ></path>
+  <svg className="w-6 h-6 text-cyan-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
   </svg>
 );
 
 const PlayIcon = () => (
-  <svg
-    className="w-6 h-6 mr-2"
-    fill="currentColor"
-    viewBox="0 0 20 20"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fillRule="evenodd"
-      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-      clipRule="evenodd"
-    ></path>
+  <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
   </svg>
 );
 
 const products = [
   {
     name: "VidPilot",
-    image: "/assets/vidpilot.png",
+    image: "/assets/vidpilot.webp",
     description:
       "Crie vídeos virais em segundos, escolha o formato, cor das legendas, narração com IA em português e inglês, e receba o título, a descrição e tags otimizadas para máxima performance - é só copiar e colar.",
     features: [
@@ -45,13 +25,13 @@ const products = [
       "Geração de Título, Descrição e Tags",
       "Videos 16:9(Padrão) e 9:16(Reels e Shorts)",
     ],
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Placeholder video
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     price: "R$49,90",
     purchaseUrl: "https://www.vidpilot.com.br",
   },
   {
     name: "ClipNews",
-    image: "/assets/clipnews.png",
+    image: "/assets/clipnews.webp",
     description:
       "Transforme qualquer notícia em um vídeo profissional em formato de telejornal, com repórter e barra de últimas notícias, e uma Thumbnail para maximizar o engajamento.",
     features: [
@@ -61,14 +41,13 @@ const products = [
       "Otimizado para engajamento",
       "Reporter virtual",
     ],
-    videoUrl:
-      "https://www.youtube.com/watch?v=videoseries?list=PLx0sYbCqOb8TBPRLp9TqA2CDh2Hj_9G43", // Placeholder news playlist
+    videoUrl: "https://www.youtube.com/watch?v=videoseries?list=PLx0sYbCqOb8TBPRLp9TqA2CDh2Hj_9G43",
     price: "R$49,90",
     purchaseUrl: "https://www.clipnews.com.br",
   },
   {
     name: "Ebook Renda Automatica IA",
-    image: "/assets/renda-automatica-ia.png",
+    image: "/assets/renda-automatica-ia.webp",
     description:
       "O guia definitivo para criar fontes de renda passiva utilizando o poder da inteligência artificial, mesmo que você seja um completo iniciante, com exemplos práticos para aplicar imediatamente.",
     features: [
@@ -89,39 +68,26 @@ const Products: React.FC = () => {
     <section id="products" className="py-20 sm:py-28 bg-[#0A0A1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Conheça Nossas Ferramentas Exclusivas
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Conheça Nossas Ferramentas Exclusivas</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
-            Tudo que você precisa para automatizar sua criação de conteúdo e
-            monetizar com IA.
+            Tudo que você precisa para automatizar sua criação de conteúdo e monetizar com IA.
           </p>
         </div>
 
         <div className="mt-16 space-y-20">
           {products.map((product, index) => (
-            <div
-              key={product.name}
-              className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16"
-            >
-              {/* Image Side */}
-              <div
-                className={`w-full flex items-center justify-center ${index % 2 !== 0 ? "lg:order-last" : ""
-                  }`}
-              >
+            <div key={product.name} className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
+              <div className={`w-full flex items-center justify-center ${index % 2 !== 0 ? "lg:order-last" : ""}`}>
                 <img
                   src={product.image}
                   alt={product.name}
-                  className={`rounded-xl object-contain glow-shadow ${product.isEbook ? "max-w-md max-h-[32rem]" : "max-w-sm"
-                    }`}
+                  loading="lazy"
+                  className={`rounded-xl object-contain glow-shadow ${product.isEbook ? "max-w-md max-h-128" : "max-w-sm"}`}
                 />
               </div>
 
-              {/* Text Side */}
               <div className="w-full">
-                <h3 className="text-3xl font-bold text-white">
-                  {product.name}
-                </h3>
+                <h3 className="text-3xl font-bold text-white">{product.name}</h3>
                 <p className="mt-4 text-gray-300">{product.description}</p>
                 <ul className="mt-6 space-y-3">
                   {product.features.map((feature) => (
@@ -143,7 +109,7 @@ const Products: React.FC = () => {
                       Ver Exemplo
                     </a>
                   )}
-                  <div className="flex-grow sm:flex-grow-0">
+                  <div className="grow sm:grow-0">
                     <a
                       href={product.purchaseUrl}
                       target="_blank"

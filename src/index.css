@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #33d1ff, #007cf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-shadow {
+  box-shadow: 0 0 25px rgba(51, 209, 255, 0.4);
+}
