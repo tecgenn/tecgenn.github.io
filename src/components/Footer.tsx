@@ -1,6 +1,6 @@
 import type React from 'react';
 import { useState } from 'react';
-import { Button, Modal } from './ui';
+import { Modal } from './ui';
 
 const TermsContent: React.FC = () => (
   <>
@@ -72,25 +72,37 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="bg-[#0A0A1A]/80 backdrop-blur-lg border-t border-cyan-500/20">
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div className="text-center sm:text-left">
-              <p className="text-gray-400">&copy; {new Date().getFullYear()} TecGenn. Todos os direitos reservados.</p>
-              <p className="text-gray-400 mt-1">
+      <footer className="bg-[#0A0A1A]/70 backdrop-blur-xl border-t border-cyan-500/10">
+        <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-gray-400">
+                &copy; {new Date().getFullYear()} <span className="gradient-text font-semibold">TecGenn</span>. Todos os
+                direitos reservados.
+              </p>
+              <p className="text-gray-500 mt-1">
                 Contato:{' '}
-                <a href="mailto:tecgenn@gmail.com" className="hover:text-cyan-400 transition-colors">
+                <a href="mailto:tecgenn@gmail.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                   tecgenn@gmail.com
                 </a>
               </p>
             </div>
-            <div className="flex space-x-6">
-              <Button variant="ghost" size="sm" onClick={() => openModal('terms')}>
+            <div className="flex items-center gap-6">
+              <button
+                type="button"
+                onClick={() => openModal('terms')}
+                className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+              >
                 Termos de Uso
-              </Button>
-              <Button variant="ghost" size="sm" onClick={() => openModal('privacy')}>
-                Política de Privacidade
-              </Button>
+              </button>
+              <span className="text-gray-700">|</span>
+              <button
+                type="button"
+                onClick={() => openModal('privacy')}
+                className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+              >
+                Privacidade
+              </button>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import type React from 'react';
-import { Badge, Button, SectionHeader } from './ui';
+import { Badge, SectionHeader } from './ui';
 
 const CheckCircleIcon = () => (
   <svg className="w-6 h-6 text-cyan-400 mr-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -68,17 +68,16 @@ const Pricing: React.FC = () => {
               <p className="text-white font-semibold text-lg mt-1">ou R$99,90 à vista no PIX</p>
             </div>
 
-            <Button
-              as="a"
+            <a
               href="https://www.pacotecompleto.com.br"
-              variant="primary"
-              size="lg"
               target="_blank"
               rel="noopener noreferrer"
-              className="transform hover:scale-105 shadow-cyan-500/40 text-xl w-full"
+              className="ripple-btn w-full"
             >
+              <span className="ripple" />
               QUERO O COMBO COM DESCONTO!
-            </Button>
+              <span className="ripple" />
+            </a>
             <p className="mt-4 text-sm text-gray-500">Compra segura e acesso imediato.</p>
             <SecuritySeals />
           </div>

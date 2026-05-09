@@ -12,10 +12,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<string, string> = {
   primary:
-    'bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold shadow-lg shadow-cyan-500/30 hover:opacity-90',
-  secondary: 'bg-gray-800/50 border border-cyan-500/30 text-white font-semibold hover:bg-gray-800 transition-colors',
+    'bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50 hover:brightness-110',
+  secondary:
+    'bg-gray-800/50 border border-cyan-500/30 text-white font-semibold hover:bg-cyan-500/20 hover:border-cyan-400/60 transition-all',
   outline:
-    'bg-transparent border-2 border-cyan-500 text-cyan-400 font-bold hover:bg-cyan-500 hover:text-white transition-colors',
+    'bg-transparent border-2 border-cyan-500 text-cyan-400 font-bold hover:bg-cyan-500 hover:text-white hover:shadow-lg hover:shadow-cyan-500/40 transition-all',
   ghost: 'bg-transparent text-gray-400 hover:text-white transition-colors',
 };
 
@@ -36,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
   rel,
   ...props
 }) => {
-  const baseClasses = `inline-flex items-center justify-center font-poppins transition-all duration-200 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const baseClasses = `inline-flex items-center justify-center font-poppins transition-all duration-300 ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
   if (as === 'a' && href) {
     return (
