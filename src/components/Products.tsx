@@ -1,9 +1,19 @@
-import type React from 'react';
-import { Button, SectionHeader } from './ui';
+import type React from "react";
+import { Button, SectionHeader } from "./ui";
 
 const CheckIcon = () => (
-  <svg className="w-6 h-6 text-cyan-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+  <svg
+    className="w-6 h-6 text-cyan-400 mr-3 shrink-0"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M5 13l4 4L19 7"
+    />
   </svg>
 );
 
@@ -31,52 +41,53 @@ interface Product {
 
 const products: Product[] = [
   {
-    name: 'VidPilot',
-    image: '/assets/vidpilot.webp',
+    name: "VidPilot",
+    image: "/assets/vidpilot.webp",
     description:
-      'Crie vídeos virais em segundos, escolha o formato, cor das legendas, narração com IA em português e inglês, e receba o título, a descrição e tags otimizadas para máxima performance - é só copiar e colar.',
+      "Crie vídeos virais em segundos, escolha o formato, cor das legendas, narração com IA em português e inglês, e receba o título, a descrição e tags otimizadas para máxima performance - é só copiar e colar.",
     features: [
-      'Criação de vídeos automática',
-      'Legendas dinâmicas e narração com IA',
-      'Uso Ilimitado com APIs Gratuitas',
-      'Geração de Título, Descrição e Tags',
-      'Videos 16:9(Padrão) e 9:16(Reels e Shorts)',
+      "Criação de vídeos automática",
+      "Legendas dinâmicas e narração com IA",
+      "Uso Ilimitado com APIs Gratuitas",
+      "Geração de Título, Descrição e Tags",
+      "Videos 16:9(Padrão) e 9:16(Reels e Shorts)",
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    price: 'R$49,90',
-    purchaseUrl: 'https://www.vidpilot.com.br',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    price: "R$49,90",
+    purchaseUrl: "https://www.vidpilot.com.br",
   },
   {
-    name: 'ClipNews',
-    image: '/assets/clipnews.webp',
+    name: "ClipNews",
+    image: "/assets/clipnews.webp",
     description:
-      'Transforme qualquer notícia em um vídeo profissional em formato de telejornal, com repórter e barra de últimas notícias, e uma Thumbnail para maximizar o engajamento.',
+      "Transforme qualquer notícia em um vídeo profissional em formato de telejornal, com barra de últimas notícias e visual moderno otimizado para engajamento.",
     features: [
-      'Notícia em vídeo com um clique',
-      'Formato de Telejornal Profissional',
-      'Uso Ilimitado com APIs Gratuitas',
-      'Otimizado para engajamento',
-      'Reporter virtual',
+      "Notícia em vídeo com um clique",
+      "Formato de Telejornal Profissional",
+      "Uso Ilimitado com APIs Gratuitas",
+      "Otimizado para engajamento",
+      "Narração automática com IA",
     ],
-    videoUrl: 'https://www.youtube.com/watch?v=videoseries?list=PLx0sYbCqOb8TBPRLp9TqA2CDh2Hj_9G43',
-    price: 'R$49,90',
-    purchaseUrl: 'https://www.clipnews.com.br',
+    videoUrl:
+      "https://www.youtube.com/watch?v=videoseries?list=PLx0sYbCqOb8TBPRLp9TqA2CDh2Hj_9G43",
+    price: "R$49,90",
+    purchaseUrl: "https://www.clipnews.com.br",
   },
   {
-    name: 'Ebook Renda Automatica IA',
-    image: '/assets/renda-automatica-ia.webp',
+    name: "Ebook Renda Automatica IA",
+    image: "/assets/renda-automatica-ia.webp",
     description:
-      'O guia definitivo para criar fontes de renda passiva utilizando o poder da inteligência artificial, mesmo que você seja um completo iniciante, com exemplos práticos para aplicar imediatamente.',
+      "O guia definitivo para criar fontes de renda passiva utilizando o poder da inteligência artificial, mesmo que você seja um completo iniciante, com exemplos práticos para aplicar imediatamente.",
     features: [
-      'Estratégias validadas de renda com IA',
-      'Passo a passo para iniciantes',
-      'Ferramentas e prompts secretos',
-      'Estudos de caso reais',
-      'Acesso vitalício ao conteúdo',
+      "Estratégias validadas de renda com IA",
+      "Passo a passo para iniciantes",
+      "Ferramentas e prompts secretos",
+      "Estudos de caso reais",
+      "Acesso vitalício ao conteúdo",
     ],
     isEbook: true,
-    price: 'R$29,90',
-    purchaseUrl: 'https://www.rendaautomaticaia.com.br',
+    price: "R$29,90",
+    purchaseUrl: "https://www.rendaautomaticaia.com.br",
   },
 ];
 
@@ -91,20 +102,27 @@ const Products: React.FC = () => {
 
         <div className="mt-16 space-y-20">
           {products.map((product, index) => (
-            <div key={product.name} className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16">
-              <div className={`w-full flex items-center justify-center ${index % 2 !== 0 ? 'lg:order-last' : ''}`}>
+            <div
+              key={product.name}
+              className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16"
+            >
+              <div
+                className={`w-full flex items-center justify-center ${index % 2 !== 0 ? "lg:order-last" : ""}`}
+              >
                 <img
                   src={product.image}
                   alt={product.name}
                   loading="lazy"
                   className={`rounded-xl object-contain glow-shadow ${
-                    product.isEbook ? 'max-w-md max-h-128' : 'max-w-sm'
+                    product.isEbook ? "max-w-md max-h-128" : "max-w-sm"
                   }`}
                 />
               </div>
 
               <div className="w-full">
-                <h3 className="text-3xl font-bold text-white">{product.name}</h3>
+                <h3 className="text-3xl font-bold text-white">
+                  {product.name}
+                </h3>
                 <p className="mt-4 text-gray-300">{product.description}</p>
                 <ul className="mt-6 space-y-3">
                   {product.features.map((feature) => (
