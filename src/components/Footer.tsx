@@ -1,33 +1,37 @@
-import type React from 'react';
-import { useState } from 'react';
-import { Modal } from './ui';
+import type React from "react";
+import { useState } from "react";
+import { Modal } from "./ui";
 
 const TermsContent: React.FC = () => (
   <>
     <p>
-      Bem-vindo à TecGenn. Ao acessar e usar nossos serviços, você concorda em cumprir e se vincular aos seguintes
-      termos e condições de uso. Por favor, leia-os com atenção.
+      Bem-vindo à TecGenn. Ao acessar e usar nossos serviços, você concorda em
+      cumprir e se vincular aos seguintes termos e condições de uso. Por favor,
+      leia-os com atenção.
     </p>
     <h3 className="font-bold text-white">1. Uso dos Serviços</h3>
     <p>
-      Os serviços e produtos fornecidos pela TecGenn são para seu uso pessoal e não comercial. Você concorda em não
-      reproduzir, duplicar, copiar, vender, revender ou explorar qualquer parte do serviço sem nossa permissão expressa
-      por escrito.
+      Os serviços e produtos fornecidos pela TecGenn são para seu uso pessoal e
+      não comercial. Você concorda em não reproduzir, duplicar, copiar, vender,
+      revender ou explorar qualquer parte do serviço sem nossa permissão
+      expressa por escrito.
     </p>
     <h3 className="font-bold text-white">2. Contas de Usuário</h3>
     <p>
-      Para acessar alguns recursos, você pode ser solicitado a fornecer informações de registro. É uma condição do seu
-      uso que todas as informações que você fornece sejam corretas, atuais e completas.
+      Para acessar alguns recursos, você pode ser solicitado a fornecer
+      informações de registro. É uma condição do seu uso que todas as
+      informações que você fornece sejam corretas, atuais e completas.
     </p>
     <h3 className="font-bold text-white">3. Propriedade Intelectual</h3>
     <p>
-      O Serviço e seu conteúdo original, recursos e funcionalidades são e permanecerão propriedade exclusiva da TecGenn
-      e de seus licenciadores.
+      O Serviço e seu conteúdo original, recursos e funcionalidades são e
+      permanecerão propriedade exclusiva da TecGenn e de seus licenciadores.
     </p>
     <h3 className="font-bold text-white">4. Rescisão</h3>
     <p>
-      Podemos rescindir ou suspender seu acesso ao nosso serviço imediatamente, sem aviso prévio ou responsabilidade,
-      por qualquer motivo, incluindo, sem limitação, se você violar os Termos.
+      Podemos rescindir ou suspender seu acesso ao nosso serviço imediatamente,
+      sem aviso prévio ou responsabilidade, por qualquer motivo, incluindo, sem
+      limitação, se você violar os Termos.
     </p>
   </>
 );
@@ -35,39 +39,44 @@ const TermsContent: React.FC = () => (
 const PrivacyPolicyContent: React.FC = () => (
   <>
     <p>
-      Sua privacidade é importante para nós. É política da TecGenn respeitar sua privacidade em relação a qualquer
-      informação sua que possamos coletar em nosso site.
+      Sua privacidade é importante para nós. É política da TecGenn respeitar sua
+      privacidade em relação a qualquer informação sua que possamos coletar em
+      nosso site.
     </p>
     <h3 className="font-bold text-white">1. Informações que Coletamos</h3>
     <p>
-      Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo
-      por meios justos e legais, com o seu conhecimento e consentimento.
+      Solicitamos informações pessoais apenas quando realmente precisamos delas
+      para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o
+      seu conhecimento e consentimento.
     </p>
     <h3 className="font-bold text-white">2. Como Usamos Suas Informações</h3>
     <p>
-      Usamos as informações que coletamos para operar, manter e fornecer os recursos e a funcionalidade do Serviço, para
-      analisar como o Serviço é usado, diagnosticar problemas técnicos e de serviço, manter a segurança e personalizar o
-      conteúdo.
+      Usamos as informações que coletamos para operar, manter e fornecer os
+      recursos e a funcionalidade do Serviço, para analisar como o Serviço é
+      usado, diagnosticar problemas técnicos e de serviço, manter a segurança e
+      personalizar o conteúdo.
     </p>
     <h3 className="font-bold text-white">3. Segurança dos Dados</h3>
     <p>
-      Estamos comprometidos em proteger a segurança de suas informações pessoais. Usamos uma variedade de tecnologias e
-      procedimentos de segurança para ajudar a proteger suas informações pessoais contra acesso, uso ou divulgação não
-      autorizados.
+      Estamos comprometidos em proteger a segurança de suas informações
+      pessoais. Usamos uma variedade de tecnologias e procedimentos de segurança
+      para ajudar a proteger suas informações pessoais contra acesso, uso ou
+      divulgação não autorizados.
     </p>
     <h3 className="font-bold text-white">4. Links para Outros Sites</h3>
     <p>
-      Nosso serviço pode conter links para outros sites que não são operados por nós. Se você clicar em um link de
-      terceiros, será direcionado para o site desse terceiro. Aconselhamos vivamente que reveja a Política de
+      Nosso serviço pode conter links para outros sites que não são operados por
+      nós. Se você clicar em um link de terceiros, será direcionado para o site
+      desse terceiro. Aconselhamos vivamente que reveja a Política de
       Privacidade de todos os sites que visitar.
     </p>
   </>
 );
 
 const Footer: React.FC = () => {
-  const [modalType, setModalType] = useState<'terms' | 'privacy' | null>(null);
+  const [modalType, setModalType] = useState<"terms" | "privacy" | null>(null);
 
-  const openModal = (type: 'terms' | 'privacy') => setModalType(type);
+  const openModal = (type: "terms" | "privacy") => setModalType(type);
   const closeModal = () => setModalType(null);
 
   return (
@@ -77,12 +86,17 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <p className="text-gray-400">
-                &copy; {new Date().getFullYear()} <span className="gradient-text font-semibold">TecGenn</span>. Todos os
-                direitos reservados.
+                &copy; {new Date().getFullYear()}{" "}
+                <span className="font-semibold">Tec</span>
+                <span className="font-semibold">Genn</span>. Todos os direitos
+                reservados.
               </p>
-              <p className="text-gray-500 mt-1">
-                Contato:{' '}
-                <a href="mailto:tecgenn@gmail.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+              <p className="text-gray-400 mt-1">
+                Contato:{" "}
+                <a
+                  href="mailto:tecgenn@gmail.com"
+                  className="text-gray-400 hover:text-cyan-300 transition-colors"
+                >
                   tecgenn@gmail.com
                 </a>
               </p>
@@ -90,7 +104,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-6">
               <button
                 type="button"
-                onClick={() => openModal('terms')}
+                onClick={() => openModal("terms")}
                 className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
               >
                 Termos de Uso
@@ -98,7 +112,7 @@ const Footer: React.FC = () => {
               <span className="text-gray-700">|</span>
               <button
                 type="button"
-                onClick={() => openModal('privacy')}
+                onClick={() => openModal("privacy")}
                 className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
               >
                 Privacidade
@@ -110,9 +124,11 @@ const Footer: React.FC = () => {
       <Modal
         isOpen={modalType !== null}
         onClose={closeModal}
-        title={modalType === 'terms' ? 'Termos de Uso' : 'Política de Privacidade'}
+        title={
+          modalType === "terms" ? "Termos de Uso" : "Política de Privacidade"
+        }
       >
-        {modalType === 'terms' ? <TermsContent /> : <PrivacyPolicyContent />}
+        {modalType === "terms" ? <TermsContent /> : <PrivacyPolicyContent />}
       </Modal>
     </>
   );
